@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>「力扣」第 875 题：爱吃香蕉的珂珂（中等） | 算法不好玩</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/book/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/book/assets/css/0.styles.e159a327.css" as="style"><link rel="preload" href="/book/assets/js/app.a4355b0d.js" as="script"><link rel="preload" href="/book/assets/js/2.ba785ee6.js" as="script"><link rel="preload" href="/book/assets/js/13.42356fcc.js" as="script"><link rel="prefetch" href="/book/assets/js/10.b6950be1.js"><link rel="prefetch" href="/book/assets/js/11.f4ee7d6e.js"><link rel="prefetch" href="/book/assets/js/12.50fe1ace.js"><link rel="prefetch" href="/book/assets/js/14.e740c742.js"><link rel="prefetch" href="/book/assets/js/15.05c628f7.js"><link rel="prefetch" href="/book/assets/js/16.bd9bc9d5.js"><link rel="prefetch" href="/book/assets/js/17.e120b4fc.js"><link rel="prefetch" href="/book/assets/js/18.398213f8.js"><link rel="prefetch" href="/book/assets/js/19.e29ad0b2.js"><link rel="prefetch" href="/book/assets/js/20.14e30c1c.js"><link rel="prefetch" href="/book/assets/js/21.4f05f6c9.js"><link rel="prefetch" href="/book/assets/js/22.98fbf199.js"><link rel="prefetch" href="/book/assets/js/23.285387f4.js"><link rel="prefetch" href="/book/assets/js/24.852addbe.js"><link rel="prefetch" href="/book/assets/js/25.d30ade13.js"><link rel="prefetch" href="/book/assets/js/26.23dfa040.js"><link rel="prefetch" href="/book/assets/js/27.b6eae7df.js"><link rel="prefetch" href="/book/assets/js/28.97878b08.js"><link rel="prefetch" href="/book/assets/js/29.7217a3d0.js"><link rel="prefetch" href="/book/assets/js/3.f0c15194.js"><link rel="prefetch" href="/book/assets/js/30.0ced5a5a.js"><link rel="prefetch" href="/book/assets/js/31.8f432033.js"><link rel="prefetch" href="/book/assets/js/32.aac9aa62.js"><link rel="prefetch" href="/book/assets/js/33.db835477.js"><link rel="prefetch" href="/book/assets/js/34.a1a59c2a.js"><link rel="prefetch" href="/book/assets/js/35.ed2ef96b.js"><link rel="prefetch" href="/book/assets/js/36.48099c55.js"><link rel="prefetch" href="/book/assets/js/37.32827612.js"><link rel="prefetch" href="/book/assets/js/38.58abec0e.js"><link rel="prefetch" href="/book/assets/js/39.f6eb3874.js"><link rel="prefetch" href="/book/assets/js/4.13ea3b32.js"><link rel="prefetch" href="/book/assets/js/40.80523ed8.js"><link rel="prefetch" href="/book/assets/js/41.f7b72b7a.js"><link rel="prefetch" href="/book/assets/js/42.44e40de9.js"><link rel="prefetch" href="/book/assets/js/43.065f077f.js"><link rel="prefetch" href="/book/assets/js/44.386d9aea.js"><link rel="prefetch" href="/book/assets/js/45.d8a88f16.js"><link rel="prefetch" href="/book/assets/js/46.33bc2083.js"><link rel="prefetch" href="/book/assets/js/47.e7767237.js"><link rel="prefetch" href="/book/assets/js/48.9bb76138.js"><link rel="prefetch" href="/book/assets/js/49.c2ca5c29.js"><link rel="prefetch" href="/book/assets/js/5.32eda204.js"><link rel="prefetch" href="/book/assets/js/50.1242fe24.js"><link rel="prefetch" href="/book/assets/js/51.e8f8117d.js"><link rel="prefetch" href="/book/assets/js/52.eae5648f.js"><link rel="prefetch" href="/book/assets/js/53.39876d83.js"><link rel="prefetch" href="/book/assets/js/6.1c662163.js"><link rel="prefetch" href="/book/assets/js/7.29470445.js"><link rel="prefetch" href="/book/assets/js/8.814b737f.js"><link rel="prefetch" href="/book/assets/js/9.d4211262.js">
+    <link rel="stylesheet" href="/book/assets/css/0.styles.e159a327.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/book/" class="home-link router-link-active"><!----> <span class="site-name">算法不好玩</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/book/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/book/guide/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础算法与数据结构" class="dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础算法与数据结构" class="mobile-dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          排序算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 1 章 二分查找
+</a></li><li class="dropdown-subitem"><a href="/book/algs/recursion/" class="nav-link">
+  第 2 章 递归
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数组里的算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 4 章 滑动窗口
+</a></li><li class="dropdown-subitem"><a href="/book/algs/02-basic-sorting/" class="nav-link">
+  第 5 章 双指针
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="威威道来" class="dropdown-title"><span class="title">威威道来</span> <span class="arrow down"></span></button> <button type="button" aria-label="威威道来" class="mobile-dropdown-title"><span class="title">威威道来</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/talk-show/2021-04/" class="nav-link">
+  2021 年 4 月
+</a></li></ul></div></div><div class="nav-item"><a href="https://leetcode-cn.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  力扣
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/liweiwei1419/book/pages" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee 部署页面
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/book/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/book/guide/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础算法与数据结构" class="dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础算法与数据结构" class="mobile-dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          排序算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 1 章 二分查找
+</a></li><li class="dropdown-subitem"><a href="/book/algs/recursion/" class="nav-link">
+  第 2 章 递归
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数组里的算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 4 章 滑动窗口
+</a></li><li class="dropdown-subitem"><a href="/book/algs/02-basic-sorting/" class="nav-link">
+  第 5 章 双指针
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="威威道来" class="dropdown-title"><span class="title">威威道来</span> <span class="arrow down"></span></button> <button type="button" aria-label="威威道来" class="mobile-dropdown-title"><span class="title">威威道来</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/talk-show/2021-04/" class="nav-link">
+  2021 年 4 月
+</a></li></ul></div></div><div class="nav-item"><a href="https://leetcode-cn.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  力扣
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/liweiwei1419/book/pages" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee 部署页面
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>第 1 章 二分查找</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/book/algs/01-binary-search/" aria-current="page" class="sidebar-link">0. 前言</a></li><li><a href="/book/algs/01-binary-search/1-1-binary-search.html" class="sidebar-link">1. 二分查找的基本问题</a></li><li><a href="/book/algs/01-binary-search/2-expansion.html" class="sidebar-link">2. 二分查找的问题变种</a></li><li><a href="/book/algs/01-binary-search/3-divide-the-search-area-into-two-parts.html" class="sidebar-link">3. 把待搜索区间分成两个部分（重点、最重要的部分在这里）</a></li><li><a href="/book/algs/01-binary-search/4-example-explanation.html" class="sidebar-link">4. 例题讲解：「力扣」第 35 题：搜索插入位置</a></li><li><a href="/book/algs/01-binary-search/5-comparison-of-two-writing-methods.html" class="sidebar-link">5. 两种写法对比</a></li><li><a href="/book/algs/01-binary-search/6-some-details.html" class="sidebar-link">6. 一些细节（以问答形式呈现）</a></li><li><a href="/book/algs/01-binary-search/7-practice.html" class="sidebar-link">7. 练习</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>二分查找习题集</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/book/algs/01-binary-search/0633-sum-of-square-numbers.html" class="sidebar-link">「力扣」第 633 题：平方数之和（中等）</a></li><li><a href="/book/algs/01-binary-search/0069-sqrtx.html" class="sidebar-link">「力扣」第 69 题：x 的平方根（简单）</a></li><li><a href="/book/algs/01-binary-search/0875-koko-eating-bananas.html" aria-current="page" class="active sidebar-link">「力扣」第 875 题：爱吃香蕉的珂珂（中等）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/book/algs/01-binary-search/1011-capacity-to-ship-packages-within-d-days.html" class="sidebar-link">「力扣」第 1011 题：在 D 天内送达包裹的能力（中等）</a></li><li><a href="/book/algs/01-binary-search/1552-magnetic-force-between-two-balls.html" class="sidebar-link">「力扣」第 1552 题：两球之间的磁力（中等）</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="「力扣」第-875-题-爱吃香蕉的珂珂-中等"><a href="#「力扣」第-875-题-爱吃香蕉的珂珂-中等" class="header-anchor">#</a> 「力扣」第 875 题：爱吃香蕉的珂珂（中等）</h3> <p>我写的题解地址：https://leetcode-cn.com/problems/koko-eating-bananas/solution/er-fen-cha-zhao-ding-wei-su-du-by-liweiwei1419/</p> <p>1、速度越小，耗时越多； 2、搜索的是速度。因为题目限制了珂珂一个小时之内只能选择一堆香蕉吃，因此速度最大值就是这几堆香蕉中，数量最多的那一堆。速度的最小值是 1（其实还可以再分析一下下界是多少）；</p> <p>3、还是因为珂珂一个小时之内只能选择一堆香蕉吃，因此：<strong>每堆香蕉吃完的耗时 = 这堆香蕉的数量 / 珂珂一小时吃香蕉的数量</strong>，这里的 <code>/</code> 在不能整除的时候，需要上取整。</p> <div class="language-C++ [] line-numbers-mode"><pre class="language-text"><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+class Solution {
+private:
+    int calculateSum(vector&lt;int&gt; &amp;piles, int speed) {
+        int sum = 0;
+        for (int pile : piles) {
+            sum += (pile + speed - 1) / speed;
+        }
+        return sum;
+    }
+
+public:
+    int minEatingSpeed(vector&lt;int&gt; &amp;piles, int H) {
+        int maxVal = 1;
+        for (int pile : piles) {
+            maxVal = max(maxVal, pile);
+        }
+
+        // 速度最小的时候，耗时最长
+        int left = 1;
+        // 速度最大的时候，耗时最短
+        int right = maxVal;
+
+        while (left &lt; right) {
+            int mid = left + (right - left) / 2;
+            if (calculateSum(piles, mid) &gt; H) {
+                // 耗时太多，说明速度太慢了，下一轮搜索区间在
+                // [mid + 1, right]
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return left;
+    }
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><div class="language-Python [] line-numbers-mode"><pre class="language-python"><code><span class="token keyword">from</span> typing <span class="token keyword">import</span> List
+
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">minEatingSpeed</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> piles<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> H<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        left <span class="token operator">=</span> <span class="token number">1</span>
+        right <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>piles<span class="token punctuation">)</span>
+
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+            mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>__calculate_sum<span class="token punctuation">(</span>piles<span class="token punctuation">,</span> mid<span class="token punctuation">)</span> <span class="token operator">&gt;</span> H<span class="token punctuation">:</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                right <span class="token operator">=</span> mid
+        <span class="token keyword">return</span> left
+
+    <span class="token keyword">def</span> <span class="token function">__calculate_sum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> piles<span class="token punctuation">,</span> speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        res <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> pile <span class="token keyword">in</span> piles<span class="token punctuation">:</span>
+            res <span class="token operator">+=</span> <span class="token punctuation">(</span>pile <span class="token operator">+</span> speed <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> speed
+        <span class="token keyword">return</span> res
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/10/2021, 6:19:58 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/book/algs/01-binary-search/0069-sqrtx.html" class="prev">
+        「力扣」第 69 题：x 的平方根（简单）
+      </a></span> <span class="next"><a href="/book/algs/01-binary-search/1011-capacity-to-ship-packages-within-d-days.html">
+        「力扣」第 1011 题：在 D 天内送达包裹的能力（中等）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/book/assets/js/app.a4355b0d.js" defer></script><script src="/book/assets/js/2.ba785ee6.js" defer></script><script src="/book/assets/js/13.42356fcc.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>第 5 节 深入理解递归-2 | 算法不好玩</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/book/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/book/assets/css/0.styles.e159a327.css" as="style"><link rel="preload" href="/book/assets/js/app.a4355b0d.js" as="script"><link rel="preload" href="/book/assets/js/2.ba785ee6.js" as="script"><link rel="preload" href="/book/assets/js/31.8f432033.js" as="script"><link rel="prefetch" href="/book/assets/js/10.b6950be1.js"><link rel="prefetch" href="/book/assets/js/11.f4ee7d6e.js"><link rel="prefetch" href="/book/assets/js/12.50fe1ace.js"><link rel="prefetch" href="/book/assets/js/13.42356fcc.js"><link rel="prefetch" href="/book/assets/js/14.e740c742.js"><link rel="prefetch" href="/book/assets/js/15.05c628f7.js"><link rel="prefetch" href="/book/assets/js/16.bd9bc9d5.js"><link rel="prefetch" href="/book/assets/js/17.e120b4fc.js"><link rel="prefetch" href="/book/assets/js/18.398213f8.js"><link rel="prefetch" href="/book/assets/js/19.e29ad0b2.js"><link rel="prefetch" href="/book/assets/js/20.14e30c1c.js"><link rel="prefetch" href="/book/assets/js/21.4f05f6c9.js"><link rel="prefetch" href="/book/assets/js/22.98fbf199.js"><link rel="prefetch" href="/book/assets/js/23.285387f4.js"><link rel="prefetch" href="/book/assets/js/24.852addbe.js"><link rel="prefetch" href="/book/assets/js/25.d30ade13.js"><link rel="prefetch" href="/book/assets/js/26.23dfa040.js"><link rel="prefetch" href="/book/assets/js/27.b6eae7df.js"><link rel="prefetch" href="/book/assets/js/28.97878b08.js"><link rel="prefetch" href="/book/assets/js/29.7217a3d0.js"><link rel="prefetch" href="/book/assets/js/3.f0c15194.js"><link rel="prefetch" href="/book/assets/js/30.0ced5a5a.js"><link rel="prefetch" href="/book/assets/js/32.aac9aa62.js"><link rel="prefetch" href="/book/assets/js/33.db835477.js"><link rel="prefetch" href="/book/assets/js/34.a1a59c2a.js"><link rel="prefetch" href="/book/assets/js/35.ed2ef96b.js"><link rel="prefetch" href="/book/assets/js/36.48099c55.js"><link rel="prefetch" href="/book/assets/js/37.32827612.js"><link rel="prefetch" href="/book/assets/js/38.58abec0e.js"><link rel="prefetch" href="/book/assets/js/39.f6eb3874.js"><link rel="prefetch" href="/book/assets/js/4.13ea3b32.js"><link rel="prefetch" href="/book/assets/js/40.80523ed8.js"><link rel="prefetch" href="/book/assets/js/41.f7b72b7a.js"><link rel="prefetch" href="/book/assets/js/42.44e40de9.js"><link rel="prefetch" href="/book/assets/js/43.065f077f.js"><link rel="prefetch" href="/book/assets/js/44.386d9aea.js"><link rel="prefetch" href="/book/assets/js/45.d8a88f16.js"><link rel="prefetch" href="/book/assets/js/46.33bc2083.js"><link rel="prefetch" href="/book/assets/js/47.e7767237.js"><link rel="prefetch" href="/book/assets/js/48.9bb76138.js"><link rel="prefetch" href="/book/assets/js/49.c2ca5c29.js"><link rel="prefetch" href="/book/assets/js/5.32eda204.js"><link rel="prefetch" href="/book/assets/js/50.1242fe24.js"><link rel="prefetch" href="/book/assets/js/51.e8f8117d.js"><link rel="prefetch" href="/book/assets/js/52.eae5648f.js"><link rel="prefetch" href="/book/assets/js/53.39876d83.js"><link rel="prefetch" href="/book/assets/js/6.1c662163.js"><link rel="prefetch" href="/book/assets/js/7.29470445.js"><link rel="prefetch" href="/book/assets/js/8.814b737f.js"><link rel="prefetch" href="/book/assets/js/9.d4211262.js">
+    <link rel="stylesheet" href="/book/assets/css/0.styles.e159a327.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/book/" class="home-link router-link-active"><!----> <span class="site-name">算法不好玩</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/book/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/book/guide/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础算法与数据结构" class="dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础算法与数据结构" class="mobile-dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          排序算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link">
+  第 1 章 二分查找
+</a></li><li class="dropdown-subitem"><a href="/book/algs/recursion/" class="nav-link router-link-active">
+  第 2 章 递归
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数组里的算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link">
+  第 4 章 滑动窗口
+</a></li><li class="dropdown-subitem"><a href="/book/algs/02-basic-sorting/" class="nav-link">
+  第 5 章 双指针
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="威威道来" class="dropdown-title"><span class="title">威威道来</span> <span class="arrow down"></span></button> <button type="button" aria-label="威威道来" class="mobile-dropdown-title"><span class="title">威威道来</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/talk-show/2021-04/" class="nav-link">
+  2021 年 4 月
+</a></li></ul></div></div><div class="nav-item"><a href="https://leetcode-cn.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  力扣
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/liweiwei1419/book/pages" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee 部署页面
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/book/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/book/guide/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础算法与数据结构" class="dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础算法与数据结构" class="mobile-dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          排序算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link">
+  第 1 章 二分查找
+</a></li><li class="dropdown-subitem"><a href="/book/algs/recursion/" class="nav-link router-link-active">
+  第 2 章 递归
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数组里的算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link">
+  第 4 章 滑动窗口
+</a></li><li class="dropdown-subitem"><a href="/book/algs/02-basic-sorting/" class="nav-link">
+  第 5 章 双指针
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="威威道来" class="dropdown-title"><span class="title">威威道来</span> <span class="arrow down"></span></button> <button type="button" aria-label="威威道来" class="mobile-dropdown-title"><span class="title">威威道来</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/talk-show/2021-04/" class="nav-link">
+  2021 年 4 月
+</a></li></ul></div></div><div class="nav-item"><a href="https://leetcode-cn.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  力扣
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/liweiwei1419/book/pages" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee 部署页面
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="第-5-节-深入理解递归-2"><a href="#第-5-节-深入理解递归-2" class="header-anchor">#</a> 第 5 节 深入理解递归-2</h1> <p>我们知道，链表是递归定义的：链表的某一个结点的 <code>next</code> 指针指向了一个链表。</p> <p>很多链表中的问题，可以使用循环实现，也可以使用递归实现。本节我们来比较它们二者解法上的的区别，以帮助大家更好地理解递归。</p> <h2 id="使用递归函数简化「链表」中「穿针引线」的操作"><a href="#使用递归函数简化「链表」中「穿针引线」的操作" class="header-anchor">#</a> 使用递归函数简化「链表」中「穿针引线」的操作</h2> <h3 id="例-「力扣」第-21-题-合并两个有序数组"><a href="#例-「力扣」第-21-题-合并两个有序数组" class="header-anchor">#</a> 例：「力扣」第 21 题：合并两个有序数组</h3> <p>将两个升序链表合并为一个新的 <strong>升序</strong> 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。</p> <p><strong>示例 1：</strong></p> <p><img src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg" alt="img"></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>输入：l1 = [1,2,4], l2 = [1,3,4]
+输出：[1,1,2,3,4,4]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>示例 2：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>输入：l1 = [], l2 = []
+输出：[]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>示例 3：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>输入：l1 = [], l2 = [0]
+输出：[0]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>提示：</strong></p> <ul><li>两个链表的节点数目范围是 <code>[0, 50]</code></li> <li><code>-100 &lt;= Node.val &lt;= 100</code></li> <li><code>l1</code> 和 <code>l2</code> 均按 <strong>非递减顺序</strong> 排列</li></ul> <p><strong>思路分析</strong>：这道题的解法我们就不在题解当中详细地进行说明了。我们直接给出循环的代码（穿针引线）和递归的代码。相信大家并不难理解它们的正确性。我们想一想，这两种解法它们的区别是什么。我们依然采用「打印关键变量」的方法理解程序的执行流程，请见「方法一」和「方法二」后面的「参考代码 3」。</p> <h4 id="方法一-穿针引线"><a href="#方法一-穿针引线" class="header-anchor">#</a> 方法一：穿针引线</h4> <p><strong>参考代码 1</strong>：</p> <div class="language-Java [] line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">ListNode</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> l1<span class="token punctuation">,</span> <span class="token class-name">ListNode</span> l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ListNode</span> dummyNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> p1 <span class="token operator">=</span> l1<span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> p2 <span class="token operator">=</span> l2<span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> curNode <span class="token operator">=</span> dummyNode<span class="token punctuation">;</span>
+        <span class="token comment">// 两者都不为空的时候，才有必要进行比较</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>p1 <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> p2 <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> p2<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 指针修改发生在这里</span>
+                curNode<span class="token punctuation">.</span>next <span class="token operator">=</span> p1<span class="token punctuation">;</span>
+                p1 <span class="token operator">=</span> p1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 指针修改发生在这里</span>
+                curNode<span class="token punctuation">.</span>next <span class="token operator">=</span> p2<span class="token punctuation">;</span>
+                p2 <span class="token operator">=</span> p2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            curNode <span class="token operator">=</span> curNode<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 跳出循环是因为 p1 == null 或者 p2 == null</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>p1 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            curNode<span class="token punctuation">.</span>next <span class="token operator">=</span> p2<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>p2 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            curNode<span class="token punctuation">.</span>next <span class="token operator">=</span> p1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> dummyNode<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h4 id="方法二-递归"><a href="#方法二-递归" class="header-anchor">#</a> 方法二：递归</h4> <p><strong>参考代码 2</strong>：</p> <div class="language-Java [] line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * 使用递归
+     *
+     * @param l1 有序链表
+     * @param l2 有序链表
+     * @return 有序链表
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">ListNode</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> l1<span class="token punctuation">,</span> <span class="token class-name">ListNode</span> l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 先写递归终止的条件</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l1 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> l2<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l2 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> l1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 假设规模小的问题已经解决，如何建立和原始规模问题之间的关系</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l1<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> l2<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// l1 被选出，谁小谁在前面</span>
+            l1<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>l1<span class="token punctuation">.</span>next<span class="token punctuation">,</span> l2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> l1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// l2 被选出，谁小谁在前面</span>
+            l2<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> l2<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> l2<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><p>我们在程序中添加一些打印输出语句。</p> <p><strong>参考代码 3</strong>：</p> <div class="language-Java [] line-numbers-mode"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">ListNode</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> l1<span class="token punctuation">,</span> <span class="token class-name">ListNode</span> l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ListNode</span> dummyNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> p1 <span class="token operator">=</span> l1<span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> p2 <span class="token operator">=</span> l2<span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> curNode <span class="token operator">=</span> dummyNode<span class="token punctuation">;</span>
+        <span class="token comment">// 两者都不为空的时候，才有必要进行比较</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>p1 <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> p2 <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> p2<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 指针修改发生在这里</span>
+                curNode<span class="token punctuation">.</span>next <span class="token operator">=</span> p1<span class="token punctuation">;</span>
+                <span class="token function">log</span><span class="token punctuation">(</span>curNode<span class="token punctuation">,</span> p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                p1 <span class="token operator">=</span> p1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 指针修改发生在这里</span>
+                curNode<span class="token punctuation">.</span>next <span class="token operator">=</span> p2<span class="token punctuation">;</span>
+                <span class="token function">log</span><span class="token punctuation">(</span>curNode<span class="token punctuation">,</span> p2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                p2 <span class="token operator">=</span> p2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            curNode <span class="token operator">=</span> curNode<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 跳出循环是因为 p1 == null 或者 p2 == null</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>p1 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            curNode<span class="token punctuation">.</span>next <span class="token operator">=</span> p2<span class="token punctuation">;</span>
+            <span class="token function">log</span><span class="token punctuation">(</span>curNode<span class="token punctuation">,</span> p2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>p2 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            curNode<span class="token punctuation">.</span>next <span class="token operator">=</span> p1<span class="token punctuation">;</span>
+            <span class="token function">log</span><span class="token punctuation">(</span>curNode<span class="token punctuation">,</span> p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> dummyNode<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 使用递归
+     *
+     * @param l1 有序链表
+     * @param l2 有序链表
+     * @return 有序链表
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">ListNode</span> <span class="token function">mergeTwoListsByRecursion</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> l1<span class="token punctuation">,</span> <span class="token class-name">ListNode</span> l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 先写递归终止的条件</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l1 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> l2<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l2 <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> l1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 假设规模小的问题已经解决，如何建立和原始规模问题之间的关系</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l1<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> l2<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// l1 被选出，谁小谁在前面</span>
+            <span class="token comment">// 这里声明 res 不是必需的，仅仅只是为了打印输出方便</span>
+            <span class="token class-name">ListNode</span> res <span class="token operator">=</span> <span class="token function">mergeTwoListsByRecursion</span><span class="token punctuation">(</span>l1<span class="token punctuation">.</span>next<span class="token punctuation">,</span> l2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            l1<span class="token punctuation">.</span>next <span class="token operator">=</span> res<span class="token punctuation">;</span>
+            <span class="token function">log</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> l1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// l2 被选出，谁小谁在前面</span>
+            <span class="token class-name">ListNode</span> res <span class="token operator">=</span> <span class="token function">mergeTwoListsByRecursion</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> l2<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            l2<span class="token punctuation">.</span>next <span class="token operator">=</span> res<span class="token punctuation">;</span>
+            <span class="token function">log</span><span class="token punctuation">(</span>l2<span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> l2<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> currNode<span class="token punctuation">,</span> <span class="token class-name">ListNode</span> nextNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;将结点 &quot;</span> <span class="token operator">+</span> currNode<span class="token punctuation">.</span>val <span class="token operator">+</span> <span class="token string">&quot; 指向结点 &quot;</span> <span class="token operator">+</span> nextNode<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Solution</span> solution <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> listNode1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>nums1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> listNode2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>nums2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;循环：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> res1 <span class="token operator">=</span> solution<span class="token punctuation">.</span><span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>listNode1<span class="token punctuation">,</span> listNode2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;结果：&quot;</span> <span class="token operator">+</span> res1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">ListNode</span> listNode3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>nums1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> listNode4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>nums2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;递归：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> res2 <span class="token operator">=</span> solution<span class="token punctuation">.</span><span class="token function">mergeTwoListsByRecursion</span><span class="token punctuation">(</span>listNode3<span class="token punctuation">,</span> listNode4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;结果：&quot;</span> <span class="token operator">+</span>res2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br></div></div><p>程序输出：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>循环：
+将结点 -1 指向结点 1
+将结点 1 指向结点 2
+将结点 2 指向结点 3
+将结点 3 指向结点 4
+将结点 4 指向结点 5
+将结点 5 指向结点 6
+结果：1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6 -&gt; null
+递归：
+将结点 5 指向结点 6
+将结点 4 指向结点 5
+将结点 3 指向结点 4
+将结点 2 指向结点 3
+将结点 1 指向结点 2
+结果：1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6 -&gt; null
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>我们看到「循环」方法合并两个链表的操作是「从头到尾」的，而「递归」方法合并两个链表的操作恰恰相反。这个例子恰恰说明了循环和递归这两种方法的思考路径是不一样的：</p> <ul><li>循环：自底向上，从一个问题最基本的样子开始，一点一点解决问题，直到完成任务；</li> <li>递归：自顶向下，先对原始问题进行拆分，直到不能拆分为止，再将子问题的结果一层一层返回，直到原问题得到了解决。</li></ul> <p><strong>注意</strong>：递归的解法思考的难度要稍微小一点，这是因为<strong>在上一层递归结束以后我们可以做一点事情，我们利用了递归函数的返回值简化了「穿针引线」的操作</strong>，这其实也是「空间换时间」思想带给我们的遍历。这一点请大家细心体会。</p> <h2 id="例-2-「力扣」第-206-题-反转链表"><a href="#例-2-「力扣」第-206-题-反转链表" class="header-anchor">#</a> 例 2：「力扣」第 206 题：反转链表</h2> <p>反转一个单链表。</p> <p><strong>示例:</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>进阶:</strong>
+你可以迭代或递归地反转链表。你能否用两种方法解决这道题？</p> <ul><li>如果我们考虑修改结点的指向操作，需要使用三个变量 <code>preNode</code>、<code>curNode</code> 和 <code>nextNode</code>，还需要想清楚修改结点指向的先后顺序；</li> <li>如果我们结合递归函数的语义完成链表的反转，就需要紧密结合递归函数的语义。</li></ul> <p><strong>思路分析</strong>：我们依然是先给出代码，请大家先结合参考代码比较两种方法的异同。</p> <h4 id="方法一-穿针引线-2"><a href="#方法一-穿针引线-2" class="header-anchor">#</a> 方法一：穿针引线</h4> <p><strong>参考代码 1</strong>：</p> <div class="language-Java [] line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">ListNode</span> <span class="token function">reverseList</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 特判</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> head<span class="token punctuation">.</span>next <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token class-name">ListNode</span> preNode <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> curNode <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>curNode <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">ListNode</span> nextNode <span class="token operator">=</span> curNode<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            curNode<span class="token punctuation">.</span>next <span class="token operator">=</span> preNode<span class="token punctuation">;</span>
+            preNode <span class="token operator">=</span> curNode<span class="token punctuation">;</span>
+            curNode <span class="token operator">=</span> nextNode<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> preNode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h4 id="方法二-递归-2"><a href="#方法二-递归-2" class="header-anchor">#</a> 方法二：递归</h4> <div class="language-Java [] line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">ListNode</span> <span class="token function">reverseList</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 特判</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> head<span class="token punctuation">.</span>next <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token class-name">ListNode</span> nextNode <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> newNode <span class="token operator">=</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>nextNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        nextNode<span class="token punctuation">.</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token comment">// 这里不要忘记切断引用，否则会出现错误：Error - Found cycle in the ListNode</span>
+        head<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> newNode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>我们学习了「例 1」，就知道了：</p> <ul><li>「穿针引线」迭代的方法从链表的头部开始反转链表，而「递归」的方法，从链表的尾部开始反转链表；</li> <li>由于在「递归函数」结束以后还可以处理一些逻辑，具体来说，递归调用栈里记录了一些有用的信息（包括递归函数的返回值），就方便我们进行相关逻辑的处理。</li></ul> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>在「力扣」很多链表的问题都可以同时使用「递归」和「迭代」完成，大家可以根据我们这一节介绍的方法，比较它们实现上的差异。</p> <h2 id="练习"><a href="#练习" class="header-anchor">#</a> 练习</h2> <p>提示：下面这些链表问题既可以使用「递归」做，也可以使用「循环」做。能实现其中一种方案，可解释性好就可以，没有必要追求某个问题一定要使用某个特定的方法实现。</p> <ol><li>完成「力扣」第 203 题：重排链表（简单）</li> <li>完成「力扣」第 24 题：两两交换链表中的节点（中等）；</li> <li>完成「力扣」第 143 题：重排链表（中等）；</li> <li>完成「力扣」第 92 题：反转链表 II（中等）。</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/book/assets/js/app.a4355b0d.js" defer></script><script src="/book/assets/js/2.ba785ee6.js" defer></script><script src="/book/assets/js/31.8f432033.js" defer></script>
+  </body>
+</html>

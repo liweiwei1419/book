@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>算法不好玩</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/book/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/book/assets/css/0.styles.e159a327.css" as="style"><link rel="preload" href="/book/assets/js/app.a4355b0d.js" as="script"><link rel="preload" href="/book/assets/js/2.ba785ee6.js" as="script"><link rel="preload" href="/book/assets/js/9.d4211262.js" as="script"><link rel="prefetch" href="/book/assets/js/10.b6950be1.js"><link rel="prefetch" href="/book/assets/js/11.f4ee7d6e.js"><link rel="prefetch" href="/book/assets/js/12.50fe1ace.js"><link rel="prefetch" href="/book/assets/js/13.42356fcc.js"><link rel="prefetch" href="/book/assets/js/14.e740c742.js"><link rel="prefetch" href="/book/assets/js/15.05c628f7.js"><link rel="prefetch" href="/book/assets/js/16.bd9bc9d5.js"><link rel="prefetch" href="/book/assets/js/17.e120b4fc.js"><link rel="prefetch" href="/book/assets/js/18.398213f8.js"><link rel="prefetch" href="/book/assets/js/19.e29ad0b2.js"><link rel="prefetch" href="/book/assets/js/20.14e30c1c.js"><link rel="prefetch" href="/book/assets/js/21.4f05f6c9.js"><link rel="prefetch" href="/book/assets/js/22.98fbf199.js"><link rel="prefetch" href="/book/assets/js/23.285387f4.js"><link rel="prefetch" href="/book/assets/js/24.852addbe.js"><link rel="prefetch" href="/book/assets/js/25.d30ade13.js"><link rel="prefetch" href="/book/assets/js/26.23dfa040.js"><link rel="prefetch" href="/book/assets/js/27.b6eae7df.js"><link rel="prefetch" href="/book/assets/js/28.97878b08.js"><link rel="prefetch" href="/book/assets/js/29.7217a3d0.js"><link rel="prefetch" href="/book/assets/js/3.f0c15194.js"><link rel="prefetch" href="/book/assets/js/30.0ced5a5a.js"><link rel="prefetch" href="/book/assets/js/31.8f432033.js"><link rel="prefetch" href="/book/assets/js/32.aac9aa62.js"><link rel="prefetch" href="/book/assets/js/33.db835477.js"><link rel="prefetch" href="/book/assets/js/34.a1a59c2a.js"><link rel="prefetch" href="/book/assets/js/35.ed2ef96b.js"><link rel="prefetch" href="/book/assets/js/36.48099c55.js"><link rel="prefetch" href="/book/assets/js/37.32827612.js"><link rel="prefetch" href="/book/assets/js/38.58abec0e.js"><link rel="prefetch" href="/book/assets/js/39.f6eb3874.js"><link rel="prefetch" href="/book/assets/js/4.13ea3b32.js"><link rel="prefetch" href="/book/assets/js/40.80523ed8.js"><link rel="prefetch" href="/book/assets/js/41.f7b72b7a.js"><link rel="prefetch" href="/book/assets/js/42.44e40de9.js"><link rel="prefetch" href="/book/assets/js/43.065f077f.js"><link rel="prefetch" href="/book/assets/js/44.386d9aea.js"><link rel="prefetch" href="/book/assets/js/45.d8a88f16.js"><link rel="prefetch" href="/book/assets/js/46.33bc2083.js"><link rel="prefetch" href="/book/assets/js/47.e7767237.js"><link rel="prefetch" href="/book/assets/js/48.9bb76138.js"><link rel="prefetch" href="/book/assets/js/49.c2ca5c29.js"><link rel="prefetch" href="/book/assets/js/5.32eda204.js"><link rel="prefetch" href="/book/assets/js/50.1242fe24.js"><link rel="prefetch" href="/book/assets/js/51.e8f8117d.js"><link rel="prefetch" href="/book/assets/js/52.eae5648f.js"><link rel="prefetch" href="/book/assets/js/53.39876d83.js"><link rel="prefetch" href="/book/assets/js/6.1c662163.js"><link rel="prefetch" href="/book/assets/js/7.29470445.js"><link rel="prefetch" href="/book/assets/js/8.814b737f.js">
+    <link rel="stylesheet" href="/book/assets/css/0.styles.e159a327.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/book/" class="home-link router-link-active"><!----> <span class="site-name">算法不好玩</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/book/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/book/guide/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础算法与数据结构" class="dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础算法与数据结构" class="mobile-dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          排序算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 1 章 二分查找
+</a></li><li class="dropdown-subitem"><a href="/book/algs/recursion/" class="nav-link">
+  第 2 章 递归
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数组里的算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 4 章 滑动窗口
+</a></li><li class="dropdown-subitem"><a href="/book/algs/02-basic-sorting/" class="nav-link">
+  第 5 章 双指针
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="威威道来" class="dropdown-title"><span class="title">威威道来</span> <span class="arrow down"></span></button> <button type="button" aria-label="威威道来" class="mobile-dropdown-title"><span class="title">威威道来</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/talk-show/2021-04/" class="nav-link">
+  2021 年 4 月
+</a></li></ul></div></div><div class="nav-item"><a href="https://leetcode-cn.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  力扣
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/liweiwei1419/book/pages" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee 部署页面
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/book/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/book/guide/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础算法与数据结构" class="dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础算法与数据结构" class="mobile-dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          排序算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 1 章 二分查找
+</a></li><li class="dropdown-subitem"><a href="/book/algs/recursion/" class="nav-link">
+  第 2 章 递归
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数组里的算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 4 章 滑动窗口
+</a></li><li class="dropdown-subitem"><a href="/book/algs/02-basic-sorting/" class="nav-link">
+  第 5 章 双指针
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="威威道来" class="dropdown-title"><span class="title">威威道来</span> <span class="arrow down"></span></button> <button type="button" aria-label="威威道来" class="mobile-dropdown-title"><span class="title">威威道来</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/talk-show/2021-04/" class="nav-link">
+  2021 年 4 月
+</a></li></ul></div></div><div class="nav-item"><a href="https://leetcode-cn.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  力扣
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/liweiwei1419/book/pages" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee 部署页面
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>第 1 章 二分查找</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/book/algs/01-binary-search/" aria-current="page" class="sidebar-link">0. 前言</a></li><li><a href="/book/algs/01-binary-search/1-1-binary-search.html" class="sidebar-link">1. 二分查找的基本问题</a></li><li><a href="/book/algs/01-binary-search/2-expansion.html" class="sidebar-link">2. 二分查找的问题变种</a></li><li><a href="/book/algs/01-binary-search/3-divide-the-search-area-into-two-parts.html" class="sidebar-link">3. 把待搜索区间分成两个部分（重点、最重要的部分在这里）</a></li><li><a href="/book/algs/01-binary-search/4-example-explanation.html" class="sidebar-link">4. 例题讲解：「力扣」第 35 题：搜索插入位置</a></li><li><a href="/book/algs/01-binary-search/5-comparison-of-two-writing-methods.html" class="sidebar-link">5. 两种写法对比</a></li><li><a href="/book/algs/01-binary-search/6-some-details.html" class="sidebar-link">6. 一些细节（以问答形式呈现）</a></li><li><a href="/book/algs/01-binary-search/7-practice.html" class="sidebar-link">7. 练习</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>二分查找习题集</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/book/algs/01-binary-search/0633-sum-of-square-numbers.html" class="sidebar-link">「力扣」第 633 题：平方数之和（中等）</a></li><li><a href="/book/algs/01-binary-search/0069-sqrtx.html" class="sidebar-link">「力扣」第 69 题：x 的平方根（简单）</a></li><li><a href="/book/algs/01-binary-search/0875-koko-eating-bananas.html" class="sidebar-link">「力扣」第 875 题：爱吃香蕉的珂珂（中等）</a></li><li><a href="/book/algs/01-binary-search/1011-capacity-to-ship-packages-within-d-days.html" class="sidebar-link">「力扣」第 1011 题：在 D 天内送达包裹的能力（中等）</a></li><li><a href="/book/algs/01-binary-search/1552-magnetic-force-between-two-balls.html" class="sidebar-link">「力扣」第 1552 题：两球之间的磁力（中等）</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>选择右中位数。</p> <h1 id="「力扣」第-69-题-x-的平方根-简单"><a href="#「力扣」第-69-题-x-的平方根-简单" class="header-anchor">#</a> 「力扣」第 69 题：x 的平方根（简单）</h1> <p>我写的题解地址：https://leetcode-cn.com/problems/sqrtx/solution/er-fen-cha-zhao-niu-dun-fa-python-dai-ma-by-liweiw/</p> <blockquote><p>实现 <code>int sqrt(int x)</code> 函数。 计算并返回 <code>x</code> 的平方根，其中 <code>x</code> 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1： 输入: 4 输出: 2 示例 2： 输入: 8 输出: 2 说明: 8 的平方根是 2.82842..., 由于返回类型是整数，小数部分将被舍去。</p></blockquote> <p>来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/sqrtx著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p> <p>[TOC]</p> <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfaqed6ag5j31cm0pggop.jpg" alt="image-20191123044054196"></p> <h3 id="方法二-二分法"><a href="#方法二-二分法" class="header-anchor">#</a> 方法二：二分法</h3> <p>根据暴力法的分析，得到。</p> <blockquote><p>如果平方以后大于 <code>x</code> ，则一定不是解。</p></blockquote> <ul><li><h4 id="传统模板"><a href="#传统模板" class="header-anchor">#</a> <strong>传统模板</strong></h4></li></ul> <p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+
+    <span class="token comment"># 二分法</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token comment"># 为了照顾到 0 把左边界设置为 0</span>
+        left <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token comment"># 为了照顾到 1 把右边界设置为 x // 2 + 1</span>
+        right <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right<span class="token punctuation">:</span>
+            <span class="token comment"># mid = left + (right - left) // 2</span>
+            mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">1</span>
+            square <span class="token operator">=</span> mid <span class="token operator">*</span> mid
+            <span class="token keyword">if</span> square <span class="token operator">==</span> x<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> mid
+            <span class="token keyword">elif</span> square <span class="token operator">&lt;</span> x<span class="token punctuation">:</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token comment"># 注意返回 left 和返回 right 的区别，应该返回 right</span>
+        <span class="token comment"># 【因为返回的是不超过，所要把右边界返回回去】</span>
+        <span class="token keyword">return</span> right
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> <span class="token number">8</span>
+    solution <span class="token operator">=</span> Solution<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    result <span class="token operator">=</span> solution<span class="token punctuation">.</span>mySqrt<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+
+    <span class="token comment"># 二分法</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">1</span>
+        left <span class="token operator">=</span> <span class="token number">0</span>
+        right <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">2</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;=</span> right<span class="token punctuation">:</span>
+            mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+            square <span class="token operator">=</span> mid <span class="token operator">*</span> mid
+            <span class="token keyword">if</span> square <span class="token operator">==</span> x<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> mid
+            <span class="token keyword">elif</span> square <span class="token operator">&lt;</span> x<span class="token punctuation">:</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> right
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h4 id="减而治之-二分查找法模板"><a href="#减而治之-二分查找法模板" class="header-anchor">#</a> “减而治之”二分查找法模板</h4> <p>Java 代码：先特判，用数学方法缩小 <code>x</code> 的范围</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * @author liwei
+ * @date 2019/6/25 7:44 PM
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution4</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 注意：针对特殊测试用例，例如 2147395599</span>
+        <span class="token comment">// 要把搜索的范围设置成长整型</span>
+        <span class="token keyword">long</span> left <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> right <span class="token operator">=</span> x <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 注意：这里一定取右中位数，如果取左中位数，代码会进入死循环</span>
+            <span class="token comment">// long mid = left + (right - left + 1) / 2;</span>
+            <span class="token keyword">long</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">long</span> square <span class="token operator">=</span> mid <span class="token operator">*</span> mid<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>square <span class="token operator">&gt;</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                left <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 因为一定存在，因此无需后处理</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> left<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+
+        left <span class="token operator">=</span> <span class="token number">1</span>
+        right <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">2</span>
+
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+            <span class="token comment"># 注意：这里一定取右中位数，如果取左中位数，代码可能会进入死循环</span>
+            <span class="token comment"># mid = left + (right - left + 1) // 2</span>
+            mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">1</span>
+            square <span class="token operator">=</span> mid <span class="token operator">*</span> mid
+
+            <span class="token keyword">if</span> square <span class="token operator">&gt;</span> x<span class="token punctuation">:</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                left <span class="token operator">=</span> mid
+        <span class="token comment"># 因为一定存在，因此无需后处理</span>
+        <span class="token keyword">return</span> left
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>2、把特判放在了左右边界里</p> <p>Java 代码：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * @author liwei
+ * @date 2019/6/25 7:44 PM
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution5</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 注意：针对特殊测试用例，例如 2147395599</span>
+        <span class="token comment">// 要把搜索的范围设置成长整型</span>
+        <span class="token comment">// 为了照顾到 0 把左边界设置为 0</span>
+        <span class="token keyword">long</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">// # 为了照顾到 1 把右边界设置为 x // 2 + 1</span>
+        <span class="token keyword">long</span> right <span class="token operator">=</span> x <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 注意：这里一定取右中位数，如果取左中位数，代码会进入死循环</span>
+            <span class="token comment">// long mid = left + (right - left + 1) / 2;</span>
+            <span class="token keyword">long</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">long</span> square <span class="token operator">=</span> mid <span class="token operator">*</span> mid<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>square <span class="token operator">&gt;</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                left <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 因为一定存在，因此无需后处理</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> left<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>Java 代码：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">long</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">// 为了照顾到 1 ，把右边界加 1 ，或者对 1 单独判断</span>
+        <span class="token keyword">long</span> right <span class="token operator">=</span> x <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">long</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>mid <span class="token operator">*</span> mid <span class="token operator">&gt;</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                left <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> left<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Solution</span> solution <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>solution<span class="token punctuation">.</span><span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token number">2147395599</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">2147395599</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> max<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> mySqrt <span class="token operator">=</span> solution<span class="token punctuation">.</span><span class="token function">mySqrt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> sysSqrt <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>mySqrt <span class="token operator">!=</span> sysSqrt<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token comment"># 为了照顾到 0 把左边界设置为 0</span>
+        left <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token comment"># 为了照顾到 1 把右边界设置为 x // 2 + 1</span>
+        right <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+            <span class="token comment"># 注意：这里一定取右中位数，如果取左中位数，代码可能会进入死循环</span>
+            <span class="token comment"># mid = left + (right - left + 1) // 2</span>
+            mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">1</span>
+            square <span class="token operator">=</span> mid <span class="token operator">*</span> mid
+
+            <span class="token keyword">if</span> square <span class="token operator">&gt;</span> x<span class="token punctuation">:</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                left <span class="token operator">=</span> mid
+        <span class="token comment"># 因为一定存在，因此无需后处理</span>
+        <span class="token keyword">return</span> left
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>3、干脆扩大范围</p> <p>Java 代码：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * @author liweiwei1419
+ * @date 2019/9/19 3:40 下午
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution8</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">long</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> right <span class="token operator">=</span> x<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">long</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>mid <span class="token operator">*</span> mid <span class="token operator">&gt;</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                left <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> left<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+
+    <span class="token comment"># 二分法</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        left <span class="token operator">=</span> <span class="token number">0</span>
+        right <span class="token operator">=</span> <span class="token number">999999</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+            mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">1</span>
+            square <span class="token operator">=</span> mid <span class="token operator">*</span> mid
+            <span class="token keyword">if</span> square <span class="token operator">&gt;</span> x<span class="token punctuation">:</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                left <span class="token operator">=</span> mid
+
+        <span class="token keyword">return</span> left
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>Java 代码：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * @author liwei
+ * @date 2019/6/25 7:44 PM
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution6</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">long</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> right <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 这种取中位数的方法又快又好，是我刚学会的，原因在下面这篇文章的评论区</span>
+            <span class="token comment">// https://www.liwei.party/2019/06/17/leetcode-solution-new/search-insert-position/</span>
+            <span class="token comment">// 注意：这里得用无符号右移</span>
+            <span class="token keyword">long</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">long</span> square <span class="token operator">=</span> mid <span class="token operator">*</span> mid<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>square <span class="token operator">&gt;</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                left <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> left<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h3 id="方法三-牛顿法"><a href="#方法三-牛顿法" class="header-anchor">#</a> 方法三：牛顿法</h3> <p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'不能输入负数'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+
+        <span class="token comment"># 把上一轮迭代的值设置成一个很大的值，是为了保证一开始的时候误差足够大</span>
+        pre <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span>
+        <span class="token comment"># 初值选正数，否则会得到负数的平方根，不符合题目要求</span>
+        cur <span class="token operator">=</span> <span class="token number">1</span>
+
+        <span class="token comment"># 当迭代变化比较大的时候，才有必要继续迭代</span>
+        <span class="token keyword">while</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>cur <span class="token operator">-</span> pre<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">:</span>
+            <span class="token comment"># 先把上一轮迭代的值记录一下，用于比较是否收敛</span>
+            pre <span class="token operator">=</span> cur
+            <span class="token comment"># 根据上一轮迭代的值计算这一次迭代的值</span>
+            cur <span class="token operator">=</span> <span class="token punctuation">(</span>pre <span class="token operator">+</span> x <span class="token operator">/</span> pre<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+
+        <span class="token keyword">return</span> <span class="token builtin">int</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    solution <span class="token operator">=</span> Solution<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    x <span class="token operator">=</span> <span class="token number">7</span>
+    res <span class="token operator">=</span> solution<span class="token punctuation">.</span>mySqrt<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>Java 代码：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution3</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// 牛顿法（重视，要会手写）</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">long</span> x <span class="token operator">=</span> a<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>x <span class="token operator">*</span> x <span class="token operator">&gt;</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            x <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">+</span> a <span class="token operator">/</span> x<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> x<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> math
+
+<span class="token keyword">def</span> <span class="token function">square</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> x <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">-</span> a
+
+<span class="token keyword">def</span> <span class="token function">my_sqrt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x0 <span class="token operator">=</span> <span class="token number">1</span>
+    learning_rate <span class="token operator">=</span> <span class="token number">0.01</span>
+    eplison <span class="token operator">=</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">16</span>
+
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        last_x0 <span class="token operator">=</span> x0
+        x0 <span class="token operator">=</span> x0 <span class="token operator">-</span> learning_rate <span class="token operator">*</span> <span class="token punctuation">(</span>square<span class="token punctuation">(</span>x0<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>last_x0 <span class="token operator">-</span> x0<span class="token punctuation">)</span> <span class="token operator">&lt;</span> eplison<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;循环了 {} 次以后收敛。&quot;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>_<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">return</span> x0
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    res <span class="token operator">=</span> math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span><span class="token number">78</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>  <span class="token comment"># 8.831760866327848</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>my_sqrt<span class="token punctuation">(</span><span class="token number">78</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> math
+
+<span class="token keyword">def</span> <span class="token function">square</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> x <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">-</span> a
+
+<span class="token keyword">def</span> <span class="token function">derivative</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">2</span> <span class="token operator">*</span> x
+
+<span class="token keyword">def</span> <span class="token function">my_sqrt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x0 <span class="token operator">=</span> <span class="token number">1</span>
+    eplison <span class="token operator">=</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">16</span>
+
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        last_x0 <span class="token operator">=</span> x0
+        x0 <span class="token operator">=</span> x0 <span class="token operator">-</span> square<span class="token punctuation">(</span>x0<span class="token punctuation">,</span> a<span class="token punctuation">)</span> <span class="token operator">/</span> derivative<span class="token punctuation">(</span>x0<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>last_x0 <span class="token operator">-</span> x0<span class="token punctuation">)</span> <span class="token operator">&lt;</span> eplison<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;循环了 {} 次以后收敛。&quot;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>_<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">return</span> x0
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    res <span class="token operator">=</span> math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span><span class="token number">78</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>  <span class="token comment"># 8.831760866327848</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>my_sqrt<span class="token punctuation">(</span><span class="token number">78</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token comment"># 牛顿法</span>
+    <span class="token comment"># 与系统函数作比较</span>
+
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        :type x: int
+        :rtype: int
+        &quot;&quot;&quot;</span>
+        <span class="token keyword">if</span> x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'不能输入负数'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+
+        cur <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">5</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            pre <span class="token operator">=</span> cur
+            cur <span class="token operator">=</span> <span class="token punctuation">(</span>cur <span class="token operator">+</span> x <span class="token operator">/</span> cur<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+            <span class="token keyword">if</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>cur <span class="token operator">-</span> pre<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> cur
+
+    <span class="token comment"># 这个解直接提交到 LeetCode 上就可以了</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt1</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        :type x: int
+        :rtype: int
+        &quot;&quot;&quot;</span>
+        <span class="token keyword">if</span> x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'不能输入负数'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        <span class="token comment"># 起始的时候在 1 ，这可以比较随意设置</span>
+        cur <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            pre <span class="token operator">=</span> cur
+            cur <span class="token operator">=</span> <span class="token punctuation">(</span>cur <span class="token operator">+</span> x <span class="token operator">/</span> cur<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+            <span class="token keyword">if</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>cur <span class="token operator">-</span> pre<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token builtin">int</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+    nums <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">999</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    solution <span class="token operator">=</span> Solution<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
+        a <span class="token operator">=</span> solution<span class="token punctuation">.</span>mySqrt<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+        b <span class="token operator">=</span> np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;牛顿法：{} \t NumPy：{}\t 差距：{}&quot;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token builtin">abs</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div><h2 id="其它参考解答"><a href="#其它参考解答" class="header-anchor">#</a> 其它参考解答</h2> <p>Java 代码：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * @author liwei
+ * @date 2019/7/23 1:36 AM
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution7</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token comment">// 对于一个非负数 n ，它的平方根不会大于（n/2+1）</span>
+        <span class="token keyword">int</span> right <span class="token operator">=</span> target <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token comment">// 如果用左边界，则还需要在最后判断返回left还是left-1</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>mid <span class="token operator">&lt;</span> target <span class="token operator">/</span> mid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                right <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">&gt;</span> target <span class="token operator">/</span> left<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> left <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> left<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>牛顿法：</p> <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfaqeky09kj31be0lek00.jpg" alt="image-20191126164305210"></p> <hr> <h3 id="思路"><a href="#思路" class="header-anchor">#</a> 思路</h3> <p>查找一个有范围的整数，可以使用二分查找。</p> <h3 id="方法一-二分法"><a href="#方法一-二分法" class="header-anchor">#</a> 方法一：二分法</h3> <p><strong>思想</strong>：使用二分法搜索平方根的思想很简单，就类似于小时候我们看的电视节目中的“猜价格”游戏，高了就往低了猜，低了就往高了猜，范围越来越小。因此，使用二分法猜算术平方根就很自然。</p> <p>直觉告诉我们，一个数的平方根最多不会超过它的一半，例如 888 的平方根，888 的一半是 444，42=16&gt;84^2=16&gt;842=16&gt;8，如果这个数越大越是如此，因此我们要计算一下，这个边界是多少。为此，解如下不等式：</p> <p>(a2)2≥a(\frac{a}{2})^2 \ge a (2a)2≥a</p> <p>意即：如果一个数的一半的平方大于它自己，那么这个数的取值范围。解以上不等式得 a≥4a \ge 4a≥4 或者 a≤0a \le 0a≤0。</p> <p>于是边界值就是 444，那么对 000、111、222、333 分别计算结果，很容易知道，这 444 个数的平方根依次是 000、111、111、111。</p> <p><strong>注意</strong>：这 444 个特值如果没有考虑到，有可能导致你设置的搜索边界不正确。在使用二分法寻找平方根的时候，要特别注意边界值的选择，以下给出两个参考代码。</p> <p><strong>参考代码 1</strong>：所有的数都放在一起考虑，为了照顾到 000 把左边界设置为 000，为了照顾到 111 把右边界设置为 <code>x // 2 + 1</code>。</p> <p>Java 代码：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 注意：针对特殊测试用例，例如 2147395599</span>
+        <span class="token comment">// 要把搜索的范围设置成长整型</span>
+        <span class="token comment">// 为了照顾到 0 把左边界设置为 0</span>
+        <span class="token keyword">long</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">// # 为了照顾到 1 把右边界设置为 x // 2 + 1</span>
+        <span class="token keyword">long</span> right <span class="token operator">=</span> x <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 注意：这里一定取右中位数，如果取左中位数，代码会进入死循环</span>
+            <span class="token keyword">long</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">long</span> square <span class="token operator">=</span> mid <span class="token operator">*</span> mid<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>square <span class="token operator">&gt;</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                left <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> left<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>Java 代码要注意到：如果中点 <code>mid</code> 声明为 <code>int</code> 类型，针对大整型测试用例通不过，因此变量需要声明为 <code>long</code> 类型，下同。</p> <p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token comment"># 为了照顾到 0 把左边界设置为 0</span>
+        left <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token comment"># 为了照顾到 1 把右边界设置为 x // 2 + 1</span>
+        right <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+            <span class="token comment"># 注意：这里一定取右中位数，如果取左中位数，代码可能会进入死循环</span>
+            mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+            square <span class="token operator">=</span> mid <span class="token operator">*</span> mid
+            
+            <span class="token keyword">if</span> square <span class="token operator">&gt;</span> x<span class="token punctuation">:</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                left <span class="token operator">=</span> mid
+        <span class="token keyword">return</span> l
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p><strong>参考代码 2</strong>：事实上，只要单独照顾一下 000 这个特例就可以了。</p> <p>Java 代码：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 注意：针对特殊测试用例，例如 2147395599</span>
+        <span class="token comment">// 要把搜索的范围设置成长整型</span>
+        <span class="token keyword">long</span> left <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> right <span class="token operator">=</span> x <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 注意：这里一定取右中位数，如果取左中位数，代码可能会进入死循环</span>
+            <span class="token keyword">long</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">long</span> square <span class="token operator">=</span> mid <span class="token operator">*</span> mid<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>square <span class="token operator">&gt;</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                left <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> l<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        
+        left <span class="token operator">=</span> <span class="token number">1</span>
+        right <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">2</span>
+
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+            <span class="token comment"># 注意：这里一定取右中位数，如果取左中位数，代码可能会进入死循环</span>
+            mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+            square <span class="token operator">=</span> mid <span class="token operator">*</span> mid
+
+            <span class="token keyword">if</span> square <span class="token operator">&gt;</span> x<span class="token punctuation">:</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                left <span class="token operator">=</span> mid
+        <span class="token keyword">return</span> left
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p><strong>注意：</strong> 这里二分法的使用是有技巧的（如果你没有意识到，这里很可能是个“坑”），下面我就上面注释中提到的：</p> <blockquote><p>注意：这里一定取右中位数，如果取左中位数，代码可能会进入死循环。</p></blockquote> <p>做一些解释。当 <code>x = 9</code> 的时候，我们不妨给“错误的”代码加上一些调试语句，这样你就会更清晰地发现死循环在什么时候出现，例如：</p> <p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+
+        left <span class="token operator">=</span> <span class="token number">1</span>
+        right <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">2</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+            <span class="token comment"># 调试代码开始：为了仔细观察区间左右端点，我们每进入一次循环，让线程休眠 1 秒</span>
+            <span class="token keyword">import</span> time
+            time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'调试代码，观察区间左右端点、中位数，和进入的分支： left = {} , right = {} , '</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+            <span class="token comment"># 调试代码结束</span>
+
+            <span class="token comment"># 错误代码，在分支左区间不发生收缩的情况下，中位数应该取右中位数</span>
+            mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+
+            <span class="token comment"># 调试代码</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'mid = {} ,'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span>
+            square <span class="token operator">=</span> mid <span class="token operator">*</span> mid
+
+            <span class="token keyword">if</span> square <span class="token operator">&gt;</span> x<span class="token punctuation">:</span>
+                <span class="token comment"># 调试代码</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'进入 right = mid - 1 这个分支。'</span><span class="token punctuation">)</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token comment"># 调试代码</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'进入 left = mid 这个分支。'</span><span class="token punctuation">)</span>
+                left <span class="token operator">=</span> mid
+        <span class="token keyword">return</span> left
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment"># 当 x = 8 的时候，代码能得出正确答案</span>
+    x <span class="token operator">=</span> <span class="token number">9</span>
+    solution <span class="token operator">=</span> Solution<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    res <span class="token operator">=</span> solution<span class="token punctuation">.</span>mySqrt<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p>控制台输出：</p> <div class="language-angelscript line-numbers-mode"><pre class="language-text"><code>调试代码，观察区间左右端点、中位数，和进入的分支： left = 2 , right = 4 , mid = 3 , 进入 left = mid 这个分支。
+调试代码，观察区间左右端点、中位数，和进入的分支： left = 3 , right = 4 , mid = 3 , 进入 left = mid 这个分支。
+调试代码，观察区间左右端点、中位数，和进入的分支： left = 3 , right = 4 , mid = 3 , 进入 left = mid 这个分支。
+调试代码，观察区间左右端点、中位数，和进入的分支： left = 3 , right = 4 , mid = 3 , 进入 left = mid 这个分支。
+调试代码，观察区间左右端点、中位数，和进入的分支： left = 3 , right = 4 , mid = 3 , 进入 left = mid 这个分支。
+Traceback (most recent call last):
+  File &quot;/Users/liwei/（按照惯例这里不让你们看，虽然真的没有什么秘密，就是皮一下子很开心啊有木有）/LeetCode-Solution-Python/17-二分查找/0069-x 的平方根-2（平方根）.py&quot;, line 37, in &lt;module&gt;
+    res = solution.mySqrt(x)
+  File &quot;/Users/liwei/（按照惯例这里不让你们看，虽然真的没有什么秘密，就是皮一下子很开心啊有木有）/LeetCode-Solution-Python/17-二分查找/0069-x 的平方根-2（平方根）.py&quot;, line 11, in mySqrt
+    time.sleep(1)
+KeyboardInterrupt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>分析：如果取中点为左中位数，你看到死循环发生在 <code>left = 3</code>， <code>right = 4</code> 的时候，此时<strong>区间只有 2 个元素</strong>。这是为什么呢？</p> <p>此时索引区间 <code>[3, 4]</code> 的中位数为左中位数，即 <code>mid = 3</code> ，此时 <code>square = 9 &lt; 9</code> 不成立，进入 <code>left = mid</code> 这个分支，你发现问题了吗，区间不发生收缩，即下一轮循环的索引区间还是  <code>[3, 4]</code>，此时中位数还取左中位数，即 <code>mid = 3</code> ，<code>square = 9 &lt; 9</code> 不成立，又进入 <code>left = mid</code> 这个分支，死循环就是这样产生的。</p> <p>接着，请你把 <code>mid = left + (right - left) // 2</code> 改成 <code>mid = left + (right - left + 1) // 2</code> ，即选择右中位数，再观察一下控制台输出，就知道此时为什么要选右中位数了。</p> <p><strong>复杂度分析：</strong></p> <ul><li>时间复杂度：O(logN)O(\log N)O(logN)，二分法的时间复杂度是对数级别的。</li> <li>空间复杂度：O(1)O(1)O(1)，使用了常数个数的辅助空间用于存储和比较。</li></ul> <h3 id="方法二-牛顿法"><a href="#方法二-牛顿法" class="header-anchor">#</a> 方法二：牛顿法</h3> <p>提示：</p> <p>牛顿法不要求掌握，但是思想也很简单，就是以直线代替曲线。具体可以参考题解首页给出的原始题解地址。</p> <p><strong>参考代码 2</strong>：</p> <p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'不能输入负数'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        <span class="token comment"># 起始的时候在 1 ，这可以比较随意设置</span>
+        cur <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            pre <span class="token operator">=</span> cur
+            cur <span class="token operator">=</span> <span class="token punctuation">(</span>cur <span class="token operator">+</span> x <span class="token operator">/</span> cur<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+            <span class="token keyword">if</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>cur <span class="token operator">-</span> pre<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token builtin">int</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>说明：<code>1e-6</code> 是科学计数法，表示 111 乘以 101010 的负 666 次方，也就是 0.0000010.0000010.000001。有的地方使用 <code>epsilon</code>（ϵ\epsilonϵ）表示 <code>1e-6</code> ，用来抵消浮点运算中因为误差造成的相等无法判断的情况，它通常是一个非常小的数字，具体多小要根据你的精度需求来设置。</p> <p><strong>复杂度分析：</strong></p> <ul><li>时间复杂度：（待讨论，反正很快很快就是了 ^_^，调皮一下显示我的无知）；</li> <li>空间复杂度：O(1)O(1)O(1)，使用了常数个数的辅助空间用于存储和比较。</li></ul> <p>（本节完）</p> <h1 id="leetcode-第-69-题-使用牛顿法求解平方根"><a href="#leetcode-第-69-题-使用牛顿法求解平方根" class="header-anchor">#</a> LeetCode 第 69 题：使用牛顿法求解平方根</h1> <p>传送门：<a href="https://leetcode-cn.com/problems/sqrtx/" target="_blank" rel="noopener noreferrer">69. x 的平方根<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <blockquote><p>实现 <code>int sqrt(int x)</code> 函数。 计算并返回 <em>x</em> 的平方根，其中 <em>x</em> 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 **示例 1:**输入: 4 输出: 2 **示例 2:**输入: 8 输出: 2 说明: 8 的平方根是 2.82842..., 由于返回类型是整数，小数部分将被舍去。</p></blockquote> <h3 id="二分法"><a href="#二分法" class="header-anchor">#</a> 二分法</h3> <p>思路：使用二分查找，特别注意：应该返回右边端点。</p> <p>Python 代码：（推荐写法）</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        
+        l <span class="token operator">=</span> <span class="token number">0</span>
+        r <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> l <span class="token operator">&lt;</span> r<span class="token punctuation">:</span>
+            mid <span class="token operator">=</span> l <span class="token operator">+</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+            square <span class="token operator">=</span> mid <span class="token operator">*</span> mid
+            
+            <span class="token keyword">if</span> square <span class="token operator">&gt;</span> x<span class="token punctuation">:</span>
+                r <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                l <span class="token operator">=</span> mid
+        <span class="token keyword">return</span> l
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>Python 代码1：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token comment"># 二分法</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        :type x: int
+        :rtype: int
+        &quot;&quot;&quot;</span>
+        l <span class="token operator">=</span> <span class="token number">0</span>
+        r <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> l <span class="token operator">&lt;=</span> r<span class="token punctuation">:</span>
+            m <span class="token operator">=</span> l <span class="token operator">+</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> l<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+            s <span class="token operator">=</span> m <span class="token operator">*</span> m
+            <span class="token keyword">if</span> s <span class="token operator">==</span> x<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> m
+            <span class="token keyword">elif</span> s <span class="token operator">&lt;</span> x<span class="token punctuation">:</span>
+                l <span class="token operator">=</span> m <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                r <span class="token operator">=</span> m <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token comment"># 注意返回 l 和返回 r 的区别，应该返回 r</span>
+        <span class="token comment"># 【因为返回的是不超过，所要把右边界返回回去】</span>
+        <span class="token keyword">return</span> r
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>Python 代码2：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token comment"># 二分法</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        :type x: int
+        :rtype: int
+        &quot;&quot;&quot;</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">1</span>
+        l <span class="token operator">=</span> <span class="token number">0</span>
+        r <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">2</span>
+        <span class="token keyword">while</span> l <span class="token operator">&lt;=</span> r<span class="token punctuation">:</span>
+            m <span class="token operator">=</span> l <span class="token operator">+</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> l<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+            s <span class="token operator">=</span> m <span class="token operator">*</span> m
+            <span class="token keyword">if</span> s <span class="token operator">==</span> x<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> m
+            <span class="token keyword">elif</span> s <span class="token operator">&lt;</span> x<span class="token punctuation">:</span>
+                l <span class="token operator">=</span> m <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                r <span class="token operator">=</span> m <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> r
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h3 id="牛顿法"><a href="#牛顿法" class="header-anchor">#</a> 牛顿法</h3> <p>思路：使用牛顿法，推荐这种做法，更简单，返回值向下取整，就能符合题要求。</p> <blockquote><p>牛顿法的公式推导必须要会。</p></blockquote> <p>Python 代码：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token comment"># 牛顿法</span>
+    <span class="token comment"># 与系统函数作比较</span>
+
+    <span class="token keyword">def</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        :type x: int
+        :rtype: int
+        &quot;&quot;&quot;</span>
+        <span class="token keyword">if</span> x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'不能输入负数'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+
+        cur <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            pre <span class="token operator">=</span> cur
+            cur <span class="token operator">=</span> <span class="token punctuation">(</span>cur <span class="token operator">+</span> x <span class="token operator">/</span> cur<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+            <span class="token keyword">if</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>cur <span class="token operator">-</span> pre<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> cur
+
+    <span class="token comment"># 这个解提交到 LeetCode 上就可以了</span>
+    <span class="token keyword">def</span> <span class="token function">mySqrt1</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        :type x: int
+        :rtype: int
+        &quot;&quot;&quot;</span>
+        <span class="token keyword">if</span> x <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'不能输入负数'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        <span class="token comment"># 起始的时候在 1 ，这可以比较随意设置</span>
+        cur <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            pre <span class="token operator">=</span> cur
+            cur <span class="token operator">=</span> <span class="token punctuation">(</span>cur <span class="token operator">+</span> x <span class="token operator">/</span> cur<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+            <span class="token keyword">if</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>cur <span class="token operator">-</span> pre<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token builtin">int</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+    nums <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">999</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    solution <span class="token operator">=</span> Solution<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
+        a <span class="token operator">=</span> solution<span class="token punctuation">.</span>mySqrt<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+        b <span class="token operator">=</span> np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;牛顿法：{} \t NumPy：{}\t 差距：{}&quot;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div><p>下面是牛顿法的笔记：</p> <p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzjqfubqebj30w40jetck.jpg" alt="image-20190110160239961"></p> <p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fzjqftv7mfj30u013fwm1.jpg" alt="image-20190110160310951"></p> <p><img src="https://liweiwei1419.github.io/images/leetcode-solution/69-1.png" alt="img"></p> <p><img src="https://liweiwei1419.github.io/images/leetcode-solution/69-2.png" alt="img"></p> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <h2 id="牛顿法的应用之一-解方程-求开方。"><a href="#牛顿法的应用之一-解方程-求开方。" class="header-anchor">#</a> 牛顿法的应用之一：解方程，求开方。</h2> <p>马同学的《如何通俗易懂地讲解牛顿迭代法求开方？》讲解了牛顿法迭代求高次方程的根的思路： https://www.zhihu.com/question/20690553</p> <p>注明：为什么例子是二次的呢？因为二次一定是凸函数。</p> <p>皮果提的文章</p> <p>牛顿法与拟牛顿法学习笔记（一）牛顿法http://blog.csdn.net/itplus/article/details/21896453</p> <p>牛顿法与拟牛顿法学习笔记（二）拟牛顿条件http://blog.csdn.net/itplus/article/details/21896619</p> <p>牛顿法与拟牛顿法学习笔记（三）DFP 算法http://blog.csdn.net/itplus/article/details/21896981</p> <p>牛顿法与拟牛顿法学习笔记（四）BFGS 算法http://blog.csdn.net/itplus/article/details/21897443</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/10/2021, 6:19:58 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/book/assets/js/app.a4355b0d.js" defer></script><script src="/book/assets/js/2.ba785ee6.js" defer></script><script src="/book/assets/js/9.d4211262.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>4. 例题讲解：「力扣」第 35 题：搜索插入位置 | 算法不好玩</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/book/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/book/assets/css/0.styles.e159a327.css" as="style"><link rel="preload" href="/book/assets/js/app.a4355b0d.js" as="script"><link rel="preload" href="/book/assets/js/2.ba785ee6.js" as="script"><link rel="preload" href="/book/assets/js/19.e29ad0b2.js" as="script"><link rel="prefetch" href="/book/assets/js/10.b6950be1.js"><link rel="prefetch" href="/book/assets/js/11.f4ee7d6e.js"><link rel="prefetch" href="/book/assets/js/12.50fe1ace.js"><link rel="prefetch" href="/book/assets/js/13.42356fcc.js"><link rel="prefetch" href="/book/assets/js/14.e740c742.js"><link rel="prefetch" href="/book/assets/js/15.05c628f7.js"><link rel="prefetch" href="/book/assets/js/16.bd9bc9d5.js"><link rel="prefetch" href="/book/assets/js/17.e120b4fc.js"><link rel="prefetch" href="/book/assets/js/18.398213f8.js"><link rel="prefetch" href="/book/assets/js/20.14e30c1c.js"><link rel="prefetch" href="/book/assets/js/21.4f05f6c9.js"><link rel="prefetch" href="/book/assets/js/22.98fbf199.js"><link rel="prefetch" href="/book/assets/js/23.285387f4.js"><link rel="prefetch" href="/book/assets/js/24.852addbe.js"><link rel="prefetch" href="/book/assets/js/25.d30ade13.js"><link rel="prefetch" href="/book/assets/js/26.23dfa040.js"><link rel="prefetch" href="/book/assets/js/27.b6eae7df.js"><link rel="prefetch" href="/book/assets/js/28.97878b08.js"><link rel="prefetch" href="/book/assets/js/29.7217a3d0.js"><link rel="prefetch" href="/book/assets/js/3.f0c15194.js"><link rel="prefetch" href="/book/assets/js/30.0ced5a5a.js"><link rel="prefetch" href="/book/assets/js/31.8f432033.js"><link rel="prefetch" href="/book/assets/js/32.aac9aa62.js"><link rel="prefetch" href="/book/assets/js/33.db835477.js"><link rel="prefetch" href="/book/assets/js/34.a1a59c2a.js"><link rel="prefetch" href="/book/assets/js/35.ed2ef96b.js"><link rel="prefetch" href="/book/assets/js/36.48099c55.js"><link rel="prefetch" href="/book/assets/js/37.32827612.js"><link rel="prefetch" href="/book/assets/js/38.58abec0e.js"><link rel="prefetch" href="/book/assets/js/39.f6eb3874.js"><link rel="prefetch" href="/book/assets/js/4.13ea3b32.js"><link rel="prefetch" href="/book/assets/js/40.80523ed8.js"><link rel="prefetch" href="/book/assets/js/41.f7b72b7a.js"><link rel="prefetch" href="/book/assets/js/42.44e40de9.js"><link rel="prefetch" href="/book/assets/js/43.065f077f.js"><link rel="prefetch" href="/book/assets/js/44.386d9aea.js"><link rel="prefetch" href="/book/assets/js/45.d8a88f16.js"><link rel="prefetch" href="/book/assets/js/46.33bc2083.js"><link rel="prefetch" href="/book/assets/js/47.e7767237.js"><link rel="prefetch" href="/book/assets/js/48.9bb76138.js"><link rel="prefetch" href="/book/assets/js/49.c2ca5c29.js"><link rel="prefetch" href="/book/assets/js/5.32eda204.js"><link rel="prefetch" href="/book/assets/js/50.1242fe24.js"><link rel="prefetch" href="/book/assets/js/51.e8f8117d.js"><link rel="prefetch" href="/book/assets/js/52.eae5648f.js"><link rel="prefetch" href="/book/assets/js/53.39876d83.js"><link rel="prefetch" href="/book/assets/js/6.1c662163.js"><link rel="prefetch" href="/book/assets/js/7.29470445.js"><link rel="prefetch" href="/book/assets/js/8.814b737f.js"><link rel="prefetch" href="/book/assets/js/9.d4211262.js">
+    <link rel="stylesheet" href="/book/assets/css/0.styles.e159a327.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/book/" class="home-link router-link-active"><!----> <span class="site-name">算法不好玩</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/book/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/book/guide/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础算法与数据结构" class="dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础算法与数据结构" class="mobile-dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          排序算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 1 章 二分查找
+</a></li><li class="dropdown-subitem"><a href="/book/algs/recursion/" class="nav-link">
+  第 2 章 递归
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数组里的算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 4 章 滑动窗口
+</a></li><li class="dropdown-subitem"><a href="/book/algs/02-basic-sorting/" class="nav-link">
+  第 5 章 双指针
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="威威道来" class="dropdown-title"><span class="title">威威道来</span> <span class="arrow down"></span></button> <button type="button" aria-label="威威道来" class="mobile-dropdown-title"><span class="title">威威道来</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/talk-show/2021-04/" class="nav-link">
+  2021 年 4 月
+</a></li></ul></div></div><div class="nav-item"><a href="https://leetcode-cn.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  力扣
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/liweiwei1419/book/pages" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee 部署页面
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/book/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/book/guide/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础算法与数据结构" class="dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础算法与数据结构" class="mobile-dropdown-title"><span class="title">基础算法与数据结构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          排序算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 1 章 二分查找
+</a></li><li class="dropdown-subitem"><a href="/book/algs/recursion/" class="nav-link">
+  第 2 章 递归
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数组里的算法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/book/algs/01-binary-search/" class="nav-link router-link-active">
+  第 4 章 滑动窗口
+</a></li><li class="dropdown-subitem"><a href="/book/algs/02-basic-sorting/" class="nav-link">
+  第 5 章 双指针
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="威威道来" class="dropdown-title"><span class="title">威威道来</span> <span class="arrow down"></span></button> <button type="button" aria-label="威威道来" class="mobile-dropdown-title"><span class="title">威威道来</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/talk-show/2021-04/" class="nav-link">
+  2021 年 4 月
+</a></li></ul></div></div><div class="nav-item"><a href="https://leetcode-cn.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  力扣
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://gitee.com/liweiwei1419/book/pages" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee 部署页面
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>第 1 章 二分查找</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/book/algs/01-binary-search/" aria-current="page" class="sidebar-link">0. 前言</a></li><li><a href="/book/algs/01-binary-search/1-1-binary-search.html" class="sidebar-link">1. 二分查找的基本问题</a></li><li><a href="/book/algs/01-binary-search/2-expansion.html" class="sidebar-link">2. 二分查找的问题变种</a></li><li><a href="/book/algs/01-binary-search/3-divide-the-search-area-into-two-parts.html" class="sidebar-link">3. 把待搜索区间分成两个部分（重点、最重要的部分在这里）</a></li><li><a href="/book/algs/01-binary-search/4-example-explanation.html" aria-current="page" class="active sidebar-link">4. 例题讲解：「力扣」第 35 题：搜索插入位置</a></li><li><a href="/book/algs/01-binary-search/5-comparison-of-two-writing-methods.html" class="sidebar-link">5. 两种写法对比</a></li><li><a href="/book/algs/01-binary-search/6-some-details.html" class="sidebar-link">6. 一些细节（以问答形式呈现）</a></li><li><a href="/book/algs/01-binary-search/7-practice.html" class="sidebar-link">7. 练习</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>二分查找习题集</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/book/algs/01-binary-search/0633-sum-of-square-numbers.html" class="sidebar-link">「力扣」第 633 题：平方数之和（中等）</a></li><li><a href="/book/algs/01-binary-search/0069-sqrtx.html" class="sidebar-link">「力扣」第 69 题：x 的平方根（简单）</a></li><li><a href="/book/algs/01-binary-search/0875-koko-eating-bananas.html" class="sidebar-link">「力扣」第 875 题：爱吃香蕉的珂珂（中等）</a></li><li><a href="/book/algs/01-binary-search/1011-capacity-to-ship-packages-within-d-days.html" class="sidebar-link">「力扣」第 1011 题：在 D 天内送达包裹的能力（中等）</a></li><li><a href="/book/algs/01-binary-search/1552-magnetic-force-between-two-balls.html" class="sidebar-link">「力扣」第 1552 题：两球之间的磁力（中等）</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_4-例题讲解-「力扣」第-35-题-搜索插入位置"><a href="#_4-例题讲解-「力扣」第-35-题-搜索插入位置" class="header-anchor">#</a> 4. 例题讲解：「力扣」第 35 题：搜索插入位置</h1> <p><strong>思路分析</strong>：</p> <p>根据示例 3：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>输入: [1, 3, 5, 6], 7
+输出: 4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>如果目标元素大于输入数组中的最后一个元素，返回数组的最后一个元素的下标 + 1。</p> <p>根据示例 2：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>输入: [1,3,5,6], 2
+输出: 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>需要返回第 1 个 <strong>大于等于（等于的情况可以看示例 1，这里省略）</strong> 目标元素 2 的下标，因此输出 1。因此 <strong>如果当前 <code>mid</code> 看到的数值严格小于 <code>target</code>，那么 <code>mid</code> 以及 <code>mid</code> 左边的所有元素就一定不是题目要求的输出，就根据这一点可以写出本题二分查找算法的完整逻辑</strong>。</p> <p><strong>参考代码 2</strong>：（第 35 题代码）</p> <div class="language-Java [] line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">searchInsert</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token comment">// 特殊判断</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> len<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 程序走到这里一定有 target &lt;= nums[len - 1]</span>
+        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> right <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token comment">// 在区间 nums[left..right] 里查找第 1 个大于等于 target 的元素的下标</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment">// 下一轮搜索的区间是 [mid + 1..right]</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 下一轮搜索的区间是 [left..mid]</span>
+                right <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> left<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>值得一提的是：由于执行到最后 <code>nums[left..right]</code> 里一定存在插入元素的位置，并且退出循环的时候一定有 <code>left == right</code> 成立，因此直接返回 <code>left</code> 或者 <code>right</code> 均可。</p> <p>这样的思路还可以完成第 704 题。</p> <p><strong>参考代码 3</strong>：（第 704 题代码）</p> <div class="language-Java [] line-numbers-mode"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> right <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token comment">// 在 nums[left..right] 里查找 target</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 为了防止 left + right 整形溢出，写成这样</span>
+            <span class="token keyword">int</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 下一轮搜索区间：[mid + 1..right]</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 下一轮搜索区间：[left..mid]</span>
+                right <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> left<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><div class="language-Java [] line-numbers-mode"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> right <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token comment">// 在 nums[left..right] 里查找 target</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 为了防止 left + right 整形溢出，写成这样</span>
+            <span class="token keyword">int</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&gt;</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 下一轮搜索区间：[left..mid - 1]</span>
+                right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 下一轮搜索区间：[mid..right]</span>
+                left <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> left<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><ul><li>退出循环的时候，我们不能确定 <code>nums[left]</code> 是否等于 <code>target</code>，因此还需要单独做一次判断；</li> <li>「选项卡二」我们还给出了一版代码，具体细节大家可以在阅读完本题解以后再来理解它。</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/book/algs/01-binary-search/3-divide-the-search-area-into-two-parts.html" class="prev">
+        3. 把待搜索区间分成两个部分（重点、最重要的部分在这里）
+      </a></span> <span class="next"><a href="/book/algs/01-binary-search/5-comparison-of-two-writing-methods.html">
+        5. 两种写法对比
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/book/assets/js/app.a4355b0d.js" defer></script><script src="/book/assets/js/2.ba785ee6.js" defer></script><script src="/book/assets/js/19.e29ad0b2.js" defer></script>
+  </body>
+</html>
